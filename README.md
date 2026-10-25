@@ -1,13 +1,19 @@
-# VaultCraft 2.0 — deployment-ready
+# VaultCraft 3.0 — editorial redesign
 
-Upload all files and the **src** folder to the repository root. The complete React app is in `src/main.jsx`; there is no separate App.jsx required.
+Original VaultCraft website inspired by premium editorial landing pages. No ProvenMethod source code, brand assets, testimonials, or copied copy.
 
-## Cloudflare Pages (not Workers)
-Build command: `npm run build`
-Build output directory: `dist`
-Root directory: `/`
+## Deploy
 
-## Locally
-`npm install` then `npm run build`.
+Upload **the contents of this folder**, including the `src` folder, to the **root** of your GitHub repository. Cloudflare Pages builds automatically when connected to `main`.
 
-Confirm the two Gumroad product URLs are live before publishing.
+- Framework: Vite
+- Build command: `npm run build`
+- Output directory: `dist`
+- Root directory: `/`
+
+## Checkout links
+
+- Paid: https://usevaultcraft.gumroad.com/l/vaultcraft
+- Free: https://usevaultcraft.gumroad.com/l/vaultcraft-starter-guide
+
+Check both links before promoting. The knowledge graph and vault explorer are *illustrative previews*, not real screenshots. Replace with genuine vault captures when ready.
