@@ -4,3 +4,38 @@
 @media(max-width:1000px){.hero{grid-template-columns:1fr;gap:45px;padding-top:70px}.hero h1{font-size:clamp(54px,9vw,92px)}.hero-visual{max-width:740px}.workspace{grid-template-columns:190px 1fr}.workspace-files{display:none}.features{grid-template-columns:repeat(2,1fr)}.feature-main{grid-row:span 2}.nav-links{gap:15px}}
 @media(max-width:700px){.shell{width:calc(100% - 36px)}.nav-inner{padding:0 18px;height:66px}.nav-links{display:none;position:absolute;top:65px;left:0;right:0;background:#15111c;padding:24px;flex-direction:column}.nav-links.open{display:flex}.nav-cta{display:none}.menu{display:block}.hero{padding-top:66px;padding-bottom:75px;min-height:0}.hero h1{font-size:clamp(43px,10vw,68px);white-space:normal}.hero-lead{font-size:18px}.hero-body{font-size:14px}.hero-actions .button{width:100%}.hero-meta{gap:10px;font-size:9px}.graph-wrap{min-height:0}.graph-svg{height:300px}.graph-top,.graph-bottom{font-size:7px;padding:13px 10px}.graph-bottom span:last-child,.live{display:none}.hero-stamp{right:-5px}.section{padding-top:80px;padding-bottom:80px}.section-head{display:block;margin-bottom:35px}.section-head>p{margin-top:25px}.section h2{font-size:clamp(43px,10vw,66px)}.steps{grid-template-columns:1fr}.step{min-height:250px;border-right:0;border-bottom:1px solid #34303b;padding:27px}.step:last-child{border:0}.step-icon{height:70px}.workspace{grid-template-columns:1fr}.workspace-side{border-right:0;border-bottom:1px solid #34303d}.side-note{display:none}.module{display:inline-flex;width:48%;font-size:12px}.workspace-content{min-height:330px}.editor-body{padding:30px 22px}.features{grid-template-columns:1fr}.feature-main{grid-row:auto}.prices{grid-template-columns:1fr}.price{padding:28px}.faq-item button{font-size:15px;gap:14px}.endcap{padding:80px 0}.endcap h2{font-size:clamp(49px,10vw,72px)}.end-actions .button{width:100%}.footer{flex-direction:column;justify-content:center;padding:30px 0;text-align:center}.ticker-inner{min-width:950px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+/* VaultCraft 3.1: calmer editorial hero and interactive course map */
+.hero{grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:clamp(55px,7vw,120px);min-height:650px;padding-top:105px;padding-bottom:105px}
+.hero-copy{min-width:0;position:relative;z-index:2}
+.hero h1{font-size:clamp(49px,4.65vw,76px);letter-spacing:-.07em;white-space:normal;line-height:1.04;max-width:730px}
+.hero-visual{min-width:0}
+.graph-wrap{min-height:0;transition:border-color .3s,box-shadow .3s}
+.graph-wrap:hover{border-color:#7c629f;box-shadow:0 35px 115px #291b4670}
+.cluster-svg{height:auto;aspect-ratio:590/395;animation:none;padding:12px}
+.cluster{cursor:pointer;outline:none;transition:opacity .25s}
+.cluster:hover .cluster-ring,.cluster:focus-visible .cluster-ring{filter:drop-shadow(0 0 10px var(--cluster));stroke-width:3px}
+.cluster:focus-visible{outline:none}
+.cluster text{pointer-events:none}
+.graph-bottom{font-size:8px}
+.hero-stamp{right:0;bottom:-17px}
+.ticker{background:#a88bff}
+/* entrance animations without dependencies */
+@keyframes vcRise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes vcGlow{0%,100%{box-shadow:0 0 0 rgba(167,132,255,0)}50%{box-shadow:0 0 38px rgba(167,132,255,.17)}}
+.hero-copy{animation:vcRise .7s ease both}
+.hero-visual{animation:vcRise .85s .13s ease both}
+.step,.feature,.price{transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease,background .3s ease}
+.step:hover,.feature:hover{transform:translateY(-6px);border-color:#8972b7;box-shadow:0 20px 45px #0004}
+.price:hover{transform:translateY(-9px);border-color:#b79cff;box-shadow:0 25px 70px #0008}
+.price.featured{animation:vcGlow 6s ease-in-out infinite}
+.price.featured:hover{animation:none;box-shadow:0 25px 70px #7e4dd02b}
+.price-btn{transition:transform .25s,background .25s,box-shadow .25s}
+.price-btn:hover{box-shadow:0 10px 30px #a88bff33}
+.workspace{transition:box-shadow .3s}
+.workspace:hover{box-shadow:0 25px 90px #7e4dd01c}
+.faq-item{transition:background .25s}
+.faq-item:hover{background:#1a1520}
+@media(max-width:1000px){.hero{grid-template-columns:1fr;gap:45px}.hero h1{font-size:clamp(50px,8vw,82px)}.hero-visual{max-width:700px;width:100%}}
+@media(max-width:700px){.hero{padding-top:58px;padding-bottom:80px}.hero h1{font-size:clamp(39px,9.2vw,62px)}.graph-top,.graph-bottom{font-size:7px}.cluster-svg{padding:2px}.hero-stamp{font-size:8px}.price:hover,.feature:hover,.step:hover{transform:none}}
+@media(prefers-reduced-motion:reduce){.hero-copy,.hero-visual,.price.featured{animation:none!important}}
